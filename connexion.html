@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - TECHFORUM 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles spécifiques pour la navbar intégrée */
+        body {
+            padding-top: 5.5rem;
+            background: var(--dark-blue);
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .navbar-tech {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .navbar-content {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            width: 100%;
+            max-width: 1200px;
+            background: var(--anthracite);
+            border-radius: 9999px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            transition: var(--transition);
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+        
+        .logo-title {
+            font-family: 'Ubuntu Mono', monospace;
+            font-weight: bold;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+            color: var(--cyan);
+        }
+        
+        .navbar-menu {
+            display: none;
+            gap: 1.5rem;
+            align-items: center;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--light-gray);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar-menu li a {
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .navbar-menu li a:hover,
+        .navbar-menu li a.active {
+            color: var(--cyan);
+        }
+        
+        .navbar-burger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            border: none;
+            background: none;
+            color: var(--light-gray);
+            border-radius: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .navbar-burger:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+        
+        .burger-lines {
+            display: block;
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+        
+        .navbar-btn {
+            display: none;
+            background: var(--cyan);
+            color: var(--dark-blue);
+            border-radius: 9999px;
+            padding: 0.5rem 1.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .navbar-btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Drawer */
+        .mobile-drawer-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        
+        .mobile-drawer-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 101;
+            height: 100vh;
+            width: 80vw;
+            max-width: 400px;
+            background: var(--anthracite);
+            transform: translateX(-100%);
+            transition: transform 0.45s cubic-bezier(.4,1.4,.4,1);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        
+        .mobile-drawer.open {
+            transform: translateX(0);
+        }
+        
+        .drawer-close-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.3rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--light-gray);
+            cursor: pointer;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.6rem;
+            transition: var(--transition);
+            z-index: 10;
+        }
+        
+        .drawer-close-btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+        
+        .drawer-inner {
+            padding: 2rem 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .mobile-drawer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 3.5rem 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            font-size: 1.18rem;
+            font-weight: 500;
+            color: var(--light-gray);
+        }
+        
+        .mobile-drawer-menu li a {
+            color: inherit;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            display: block;
+        }
+        
+        .mobile-drawer-menu li a:hover {
+            color: var(--cyan);
+        }
+        
+        .mobile-drawer-btn {
+            margin-top: 2.5rem;
+            background: var(--cyan);
+            color: var(--dark-blue);
+            border-radius: 2rem;
+            padding: 0.7rem 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .mobile-drawer-btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        @media (min-width: 992px) {
+            .navbar-content {
+                padding: 0.5rem 2rem;
+            }
+            
+            .navbar-menu {
+                display: flex;
+            }
+            
+            .navbar-burger {
+                display: none;
+            }
+            
+            .navbar-btn {
+                display: inline-block;
+            }
+            
+            .mobile-drawer, .mobile-drawer-backdrop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar-tech" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('assets/forum-bg.jpg');">
+        <div class="navbar-content">
+            <!-- LOGO -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="" class="logo-img">
+                <span class="logo-title">TECHFORUM <span class="logo-subtitle">2025</span></span>
+            </a>
+            
+            <!-- MENU BURGER -->
+            <button class="navbar-burger" id="mobileMenuBtn" aria-label="Menu">
+                <svg class="burger-lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/>
+                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+                    <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <!-- MENU PRINCIPAL -->
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <!-- BOUTON RESERVATION -->
+            <a href="billetterie.html" class="navbar-btn">
+                Réserver
+            </a>
+        </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+        <div class="drawer-inner">
+            <ul class="mobile-drawer-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="billetterie.html" class="mobile-drawer-btn">
+                Réserver
+            </a>
+        </div>
+    </aside>
+    </header>
+
+    <main>
+        <section class="page-header with-bg" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('assets/forum-bg.jpg');">
+            <div class="container">
+                <h1>Connexion au Forum</h1>
+                <p>Accédez à votre compte pour participer aux discussions</p>
+            </div>
+        </section>
+
+        <section class="auth-form">
+            <div class="container">
+                <div class="form-container">
+                    <form class="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password">Mot de passe</label>
+                            <input type="password" id="login-password" required>
+                            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn primary large">Se connecter</button>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <p>Pas encore de compte ? <a href="inscription.html">S'inscrire</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <img src="assets/logo.png" alt="TECHFORUM 2025" class="footer-logo">
+                        <p>TECHFORUM 2025 - Le festival technologique incontournable de l'année.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="activites.html">Activités</a></li>
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="billetterie.html">Billetterie</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Guinée, Université Gamal Abdel Nasser</li>
+                            <li><i class="fas fa-envelope"></i> contact@techforum2025.com</li>
+                            <li><i class="fas fa-phone"></i> +224 610 30 50 71</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TECHFORUM. Tous droits réservés.</p>
+                    <div class="legal-links">
+                        <a href="#">Mentions légales</a>
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions générales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+    </footer>
+
+    <script>
+        // Gestion du menu mobile de la nouvelle navbar
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.add('open');
+            mobileDrawer.classList.add('open');
+        });
+
+        drawerCloseBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+
+        drawerBackdrop.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+    </script>
+</body>
+</html>

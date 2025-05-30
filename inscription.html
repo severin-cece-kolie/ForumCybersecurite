@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - TECHFORUM 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+        <nav class="navbar-tech">
+            <div class="navbar-content">
+                <!-- LOGO -->
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="" class="logo-img">
+                    <span class="logo-title">TECHFORUM <span class="logo-subtitle">2025</span></span>
+                </a>
+                
+                <!-- MENU BURGER -->
+                <button class="navbar-burger" id="mobileMenuBtn" aria-label="Menu">
+                    <svg class="burger-lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/>
+                        <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+                        <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                
+                <!-- MENU PRINCIPAL -->
+                <ul class="navbar-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="activites.html">Activités</a></li>
+                    <li><a href="forum.html" class="active">Forum</a></li>
+                    <li><a href="billetterie.html">Billetterie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- BOUTON RESERVATION -->
+                <a href="billetterie.html" class="navbar-btn">
+                    Réserver
+                </a>
+            </div>
+        </nav>
+
+        <!-- MENU MOBILE -->
+        <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+        <aside class="mobile-drawer" id="mobileDrawer">
+            <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+            <div class="drawer-inner">
+                <ul class="mobile-drawer-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="activites.html">Activités</a></li>
+                    <li><a href="forum.html" class="active">Forum</a></li>
+                    <li><a href="billetterie.html">Billetterie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="billetterie.html" class="mobile-drawer-btn">
+                    Réserver
+                </a>
+            </div>
+        </aside>
+
+
+    <main>
+        <section class="page-header with-bg" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('assets/forum-bg.jpg');">
+            <div class="container">
+                <h1>Inscription au Forum</h1>
+                <p>Créez un compte pour participer aux discussions technologiques</p>
+            </div>
+        </section>
+
+        <section class="auth-form">
+            <div class="container">
+                <div class="form-container">
+                    <form class="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-firstname">Prénom</label>
+                                <input type="text" id="register-firstname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-lastname">Nom</label>
+                                <input type="text" id="register-lastname" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password">Mot de passe</label>
+                            <input type="password" id="register-password" required>
+                            <div class="password-hint">Minimum 8 caractères avec chiffres et lettres</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-confirm">Confirmer le mot de passe</label>
+                            <input type="password" id="register-confirm" required>
+                        </div>
+                        
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a></label>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn primary large">S'inscrire</button>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <p>Déjà un compte ? <a href="connexion.html">Se connecter</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <img src="assets/logo.png" alt="TECHFORUM 2025" class="footer-logo">
+                        <p>TECHFORUM 2025 - Le festival technologique incontournable de l'année.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="activites.html">Activités</a></li>
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="billetterie.html">Billetterie</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Guinée, Université Gamal Abdel Nasser de Conakry</li>
+                            <li><i class="fas fa-envelope"></i> contact@techforum2025.com</li>
+                            <li><i class="fas fa-phone"></i> +224 610 30 50 71</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TECHFORUM. Tous droits réservés.</p>
+                    <div class="legal-links">
+                        <a href="#">Mentions légales</a>
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions générales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+    </footer>
+
+    <script>
+        // Menu mobile
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

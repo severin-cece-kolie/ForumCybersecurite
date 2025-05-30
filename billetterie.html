@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billetterie - TECHFORUM 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar-tech">
+        <div class="navbar-content">
+            <!-- LOGO -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="" class="logo-img">
+                <span class="logo-title">TECHFORUM <span class="logo-subtitle">2025</span></span>
+            </a>
+            
+            <!-- MENU BURGER -->
+            <button class="navbar-burger" id="mobileMenuBtn" aria-label="Menu">
+                <svg class="burger-lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/>
+                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+                    <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <!-- MENU PRINCIPAL -->
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <!-- BOUTON RESERVATION -->
+            <a href="billetterie.html" class="navbar-btn">
+                Réserver
+            </a>
+        </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+        <div class="drawer-inner">
+            <ul class="mobile-drawer-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="billetterie.html" class="mobile-drawer-btn">
+                Réserver
+            </a>
+        </div>
+    </aside>
+    
+
+    <main>
+        <section class="page-header" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('assets/forum-bg.jpg');">
+            <div class="container">
+                <h1>Billetterie</h1>
+                <p>Réservez dès maintenant votre place pour TECHFORUM 2025</p>
+            </div>
+        </section>
+
+        <section class="tickets">
+            <div class="container">
+                <div class="ticket-cards">
+                    <div class="ticket-card">
+                        <h3>Pass Étudiant</h3>
+                        <div class="price">5.000GNF<span>/jour</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Accès à toutes les conférences</li>
+                            <li><i class="fas fa-check"></i> Participation à 2 activités au choix</li>
+                            <li><i class="fas fa-check"></i> Accès au forum technologique</li>
+                            <li><i class="fas fa-check"></i> Petit-déjeuner offert</li>
+                            <li><i class="fas fa-times"></i> Accès aux ateliers premium</li>
+                        </ul>
+                        <a href="#reservation" class="btn primary">Choisir ce billet</a>
+                    </div>
+                    
+                    <div class="ticket-card recommended">
+                        <div class="recommended-badge">Populaire</div>
+                        <h3>Pass Professionnel</h3>
+                        <div class="price">10.000GNF<span>/jour</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Accès à toutes les conférences</li>
+                            <li><i class="fas fa-check"></i> Participation illimitée aux activités</li>
+                            <li><i class="fas fa-check"></i> Accès au forum technologique</li>
+                            <li><i class="fas fa-check"></i> Déjeuner et collations offerts</li>
+                            <li><i class="fas fa-check"></i> Accès aux ateliers premium</li>
+                        </ul>
+                        <a href="#reservation" class="btn primary">Choisir ce billet</a>
+                    </div>
+                    
+                    <div class="ticket-card">
+                        <h3>Pass VIP</h3>
+                        <div class="price">20.000GNF<span>/jour</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Accès à toutes les conférences</li>
+                            <li><i class="fas fa-check"></i> Participation illimitée aux activités</li>
+                            <li><i class="fas fa-check"></i> Places réservées en première ligne</li>
+                            <li><i class="fas fa-check"></i> Rencontre avec les speakers</li>
+                            <li><i class="fas fa-check"></i> Accès lounge VIP avec catering</li>
+                        </ul>
+                        <a href="#reservation" class="btn primary">Choisir ce billet</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reservation" id="reservation">
+            <div class="container">
+                <h2>Formulaire de réservation</h2>
+                <p>Remplissez ce formulaire pour réserver votre place à TECHFORUM 2025</p>
+                
+                <form class="reservation-form">
+                    <div class="form-group">
+                        <label for="ticket-type">Type de billet</label>
+                        <select id="ticket-type" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="student">Pass Étudiant (5.000GNF/jour)</option>
+                            <option value="pro">Pass Professionnel (10.000GNF/jour)</option>
+                            <option value="vip">Pass VIP (20.000GNF/jour)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="days">Jours de participation</label>
+                        <div class="days-checkboxes">
+                            <label><input type="checkbox" name="day" value="15"> 15 Octobre</label>
+                            <label><input type="checkbox" name="day" value="16"> 16 Octobre</label>
+                            <label><input type="checkbox" name="day" value="17"> 17 Octobre</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Nombre de billets</label>
+                        <input type="number" id="quantity" min="1" max="10" value="1" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">Prénom</label>
+                            <input type="text" id="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Nom</label>
+                            <input type="text" id="last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="activities">Activités souhaitées (optionnel)</label>
+                        <select id="activities" multiple>
+                            <option value="ctf">CTF (Capture The Flag)</option>
+                            <option value="keyboard">Rapidité clavier</option>
+                            <option value="quiz">Quiz Technologique</option>
+                            <option value="audit">Audits de Sécurité</option>
+                            <option value="conference">Conférences Techniques</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments">Commentaires (optionnel)</label>
+                        <textarea id="comments" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn primary large">Valider ma réservation</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2>Questions fréquentes</h2>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Dois-je présenter une preuve de statut étudiant ?<i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>Oui, pour bénéficier du tarif étudiant, vous devrez présenter une carte d'étudiant valide ou un certificat de scolarité datant de l'année en cours lors de votre enregistrement sur place.</p>
+                    </div>
+                </div>
+                               
+                <div class="faq-item">
+                    <h3 class="faq-question">Puis-je acheter un billet sur place ?<i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>Des billets pourront être achetés sur place sous réserve de disponibilité, mais nous recommandons fortement de réserver à l'avance car l'événement risque d'être complet. Les billets achetés sur place seront majorés de 20%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <img src="assets/logo.png" alt="TECHFORUM 2025" class="footer-logo">
+                        <p>TECHFORUM 2025 - Le festival technologique incontournable de l'année.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="activites.html">Activités</a></li>
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="billetterie.html">Billetterie</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Guinée, Université Gamal Abdel Nasser</li>
+                            <li><i class="fas fa-envelope"></i> contact@techforum2025.com</li>
+                            <li><i class="fas fa-phone"></i> +224 610 30 50 71</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TECHFORUM. Tous droits réservés.</p>
+                    <div class="legal-links">
+                        <a href="#">Mentions légales</a>
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions générales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+    </footer>
+
+    <script>
+        // Gestion du menu mobile de la nouvelle navbar
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.add('open');
+            mobileDrawer.classList.add('open');
+        });
+
+        drawerCloseBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+
+        drawerBackdrop.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+    </script>
+</body>
+</html>

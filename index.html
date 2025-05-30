@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHFORUM 2025 - Festival Informatique</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- NAVBAR TECHFORUM -->
+    <nav class="navbar-tech">
+        <div class="navbar-content">
+            <!-- LOGO -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="" class="logo-img">
+                <span class="logo-title">TECHFORUM <span class="logo-subtitle">2025</span></span>
+            </a>
+            
+            <!-- MENU BURGER -->
+            <button class="navbar-burger" id="mobileMenuBtn" aria-label="Menu">
+                <svg class="burger-lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/>
+                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+                    <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <!-- MENU PRINCIPAL -->
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <!-- BOUTON RESERVATION -->
+            <a href="billetterie.html" class="navbar-btn">
+                Réserver
+            </a>
+        </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+        <div class="drawer-inner">
+            <ul class="mobile-drawer-menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="billetterie.html" class="mobile-drawer-btn">
+                Réserver
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>TECHFORUM 2025</h1>
+                <p class="subtitle">L'événement technologique de l'année</p>
+                <p class="date-location">15-17 Octobre 2025 • Université Gamal Abdel Nasser</p>
+                <div class="cta-buttons">
+                    <a href="billetterie.html" class="btn primary">Réserver maintenant</a>
+                    <a href="activites.html" class="btn secondary">Découvrir les activités</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>À propos du festival</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>TECHFORUM 2025 est le festival incontournable pour les passionnés de technologie, développeurs, experts en cybersécurité et innovateurs. Pendant 3 jours, venez participer à des compétitions stimulantes, assister à des conférences exclusives et échanger avec les meilleurs experts du secteur.</p>
+                        <p>Notre mission est de créer un espace unique où la communauté technologique peut se rencontrer, apprendre et se challenger dans une atmosphère conviviale et professionnelle.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/conference.jpg" alt="Conférence TECHFORUM">
+                    </div>
+                </div>
+                
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>3 Jours</h3>
+                        <p>De conférences, ateliers et compétitions</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-trophy"></i>
+                        <h3>5 Activités</h3>
+                        <p>Pour tous les passionnés de tech</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <h3>1000+</h3>
+                        <p>Participants attendus</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-microphone"></i>
+                        <h3>20+</h3>
+                        <p>Conférenciers experts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-activities">
+            <div class="container">
+                <h2>Découvrez nos activités</h2>
+                <p class="section-description">Un aperçu des compétitions et ateliers qui vous attendent</p>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <img src="assets/ctf.PNG" alt="CTF">
+                        <div class="activity-content">
+                            <h3>CTF (Capture The Flag)</h3>
+                            <p>Compétition de sécurité informatique où vous devrez résoudre des challenges techniques.</p>
+                            <a href="activites.html#ctf" class="btn small">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <img src="assets/keyboard.jpg.jpeg" alt="Rapidité clavier">
+                        <div class="activity-content">
+                            <h3>Rapidité clavier</h3>
+                            <p>Montrez votre vitesse de frappe et gagnez des prix impressionnants.</p>
+                            <a href="activites.html#keyboard" class="btn small">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <img src="assets/quiz.jpg" alt="Quiz Technologique">
+                        <div class="activity-content">
+                            <h3>Quiz Technologique</h3>
+                            <p>Testez vos connaissances sur divers sujets technologiques.</p>
+                            <a href="activites.html#quiz" class="btn small">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="activites.html" class="btn primary">Voir toutes les activités</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/logo.png" alt="TECHFORUM 2025" class="footer-logo">
+                    <p>TECHFORUM 2025 - Le festival technologique incontournable de l'année.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="activites.html">Activités</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="billetterie.html">Billetterie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Guinée, Université Gamal Abdel Nasser</li>
+                        <li><i class="fas fa-envelope"></i> contact@techforum2025.com</li>
+                        <li><i class="fas fa-phone"></i> +224 610 30 50 71</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TECHFORUM. Tous droits réservés.</p>
+                <div class="legal-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions générales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+        function openDrawer() {
+            mobileDrawer.classList.add('open');
+            drawerBackdrop.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            mobileDrawer.classList.remove('open');
+            drawerBackdrop.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openDrawer);
+        drawerCloseBtn.addEventListener('click', closeDrawer);
+        drawerBackdrop.addEventListener('click', closeDrawer);
+
+        // Fermeture avec la touche Escape
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeDrawer();
+        });
+    </script>
+</body>
+</html>

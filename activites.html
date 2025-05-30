@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activités - TECHFORUM 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+        <nav class="navbar-tech">
+            <div class="navbar-content">
+                <!-- LOGO -->
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="TECHFORUM 2025" class="logo-img">
+                    <span class="logo-title">TECHFORUM <span class="logo-subtitle">2025</span></span>
+                </a>
+                
+                <!-- MENU BURGER -->
+                <button class="navbar-burger" id="mobileMenuBtn" aria-label="Menu">
+                    <svg class="burger-lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/>
+                        <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+                        <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                
+                <!-- MENU PRINCIPAL -->
+                <ul class="navbar-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="activites.html" class="active">Activités</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="billetterie.html">Billetterie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- BOUTON RESERVATION -->
+                <a href="billetterie.html" class="navbar-btn">
+                    Réserver
+                </a>
+            </div>
+        </nav>
+
+        <!-- MENU MOBILE -->
+        <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+        <aside class="mobile-drawer" id="mobileDrawer">
+            <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+            <div class="drawer-inner">
+                <ul class="mobile-drawer-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="activites.html" class="active">Activités</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="billetterie.html">Billetterie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="billetterie.html" class="mobile-drawer-btn">
+                    Réserver
+                </a>
+            </div>
+        </aside>
+    
+
+    <main>
+        <section class="page-header" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('assets/forum-bg.jpg');">
+            <div class="container">
+                <h1>Nos Activités</h1>
+                <p>Découvrez toutes les compétitions et ateliers proposés pendant TECHFORUM 2025</p>
+            </div>
+        </section>
+
+        <section class="activities-detail">
+            <div class="container">
+                <div class="activity" id="ctf">
+                    <div class="activity-image">
+                        <img src="assets/ctf.jpeg" alt="CTF">
+                    </div>
+                    <div class="activity-content">
+                        <h2>CTF (Capture The Flag)</h2>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 16 Octobre 2025</span>
+                            <span><i class="fas fa-clock"></i> 9h00 - 18h00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Salle A1</span>
+                        </div>
+                        <p>Le CTF (Capture The Flag) est une compétition de sécurité informatique où les participants doivent résoudre une série de challenges techniques pour "capturer" des drapeaux (flags). Ces challenges couvrent divers domaines : cryptographie, forensic, reverse engineering, web exploitation, etc.</p>
+                        <p>Deux formats disponibles :</p>
+                        <ul>
+                            <li><strong>Jeopardy</strong> : Challenges indépendants classés par difficulté</li>
+                            <li><strong>Attack-Defense</strong> : Équipes attaquent et défendent leurs serveurs</li>
+                        </ul>
+                        <p>Matériel recommandé : ordinateur portable avec les outils de sécurité de base (Kali Linux recommandé).</p>
+                        <a href="billetterie.html" class="btn primary">S'inscrire à cette activité</a>
+                    </div>
+                </div>
+
+                <div class="activity" id="keyboard">
+                    <div class="activity-content">
+                        <h2>Rapidité Clavier</h2>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 15 Octobre 2025</span>
+                            <span><i class="fas fa-clock"></i> 14h00 - 17h00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Salle B2</span>
+                        </div>
+                        <p>Compétition ouverte à tous pour déterminer qui a la meilleure vitesse et précision de frappe au clavier. Plusieurs épreuves seront proposées :</p>
+                        <ul>
+                            <li>Frappe de texte standard (français/anglais)</li>
+                            <li>Frappe de code (Python, JavaScript, etc.)</li>
+                            <li>Épreuve spéciale "code obscurci"</li>
+                        </ul>
+                        <p>Les participants seront jugés sur leur vitesse (mots/minute) et leur précision. Des prix seront remis aux 3 premiers de chaque catégorie.</p>
+                        <a href="billetterie.html" class="btn primary">S'inscrire à cette activité</a>
+                    </div>
+                    <div class="activity-image">
+                        <img src="assets/keyboard.jpg.jpeg" alt="Rapidité Clavier">
+                    </div>
+                </div>
+
+                <div class="activity" id="quiz">
+                    <div class="activity-image">
+                        <img src="assets/quiz.jpg" alt="Quiz Technologique">
+                    </div>
+                    <div class="activity-content">
+                        <h2>Quiz Technologique</h2>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 17 Octobre 2025</span>
+                            <span><i class="fas fa-clock"></i> 10h00 - 12h00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Salle C3</span>
+                        </div>
+                        <p>Testez vos connaissances technologiques avec notre grand quiz interactif. Plusieurs catégories seront proposées :</p>
+                        <ul>
+                            <li>Histoire de l'informatique</li>
+                            <li>Développement web et mobile</li>
+                            <li>Cybersécurité</li>
+                            <li>Intelligence Artificielle</li>
+                            <li>Culture geek</li>
+                        </ul>
+                        <p>Participation individuelle ou par équipe (max 3 personnes). Des lots technologiques seront remis aux gagnants.</p>
+                        <a href="billetterie.html" class="btn primary">S'inscrire à cette activité</a>
+                    </div>
+                </div>
+
+                <div class="activity" id="audit">
+                    <div class="activity-content">
+                        <h2>Audits de Sécurité</h2>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 16 Octobre 2025</span>
+                            <span><i class="fas fa-clock"></i> 11h00 - 13h00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Salle D4</span>
+                        </div>
+                        <p>Atelier pratique d'audit de sécurité où vous apprendrez à identifier et exploiter les vulnérabilités courantes dans les applications web. Nous fournirons des environnements spécialement conçus pour cet atelier.</p>
+                        <p>Thèmes couverts :</p>
+                        <ul>
+                            <li>Injection SQL</li>
+                            <li>Cross-Site Scripting (XSS)</li>
+                            <li>Cross-Site Request Forgery (CSRF)</li>
+                            <li>Authentification cassée</li>
+                            <li>Configuration incorrecte de sécurité</li>
+                        </ul>
+                        <p>Niveau requis : connaissances de base en développement web.</p>
+                        <a href="billetterie.html" class="btn primary">S'inscrire à cette activité</a>
+                    </div>
+                    <div class="activity-image">
+                        <img src="assets/audit.jpg" alt="Audits de Sécurité">
+                    </div>
+                </div>
+
+                <div class="activity" id="conference">
+                    <div class="activity-image">
+                        <img src="assets/conference.jpg" alt="Conférences Techniques">
+                    </div>
+                    <div class="activity-content">
+                        <h2>Conférences Techniques</h2>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</span>
+                            <span><i class="fas fa-clock"></i> Toute la journée</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Auditorium Principal</span>
+                        </div>
+                        <p>Assistez à des conférences données par des experts reconnus dans leur domaine. Voici quelques-uns des thèmes qui seront abordés :</p>
+                        <ul>
+                            <li>L'avenir du développement web avec WebAssembly</li>
+                            <li>Cybersécurité : les nouvelles menaces en 2025</li>
+                            <li>IA éthique : défis et opportunités</li>
+                            <li>Blockchain au-delà des cryptomonnaies</li>
+                            <li>DevOps et SRE : meilleures pratiques</li>
+                        </ul>
+                        <p>Le programme détaillé des conférences sera disponible un mois avant l'événement.</p>
+                        <a href="billetterie.html" class="btn primary">S'inscrire à cette activité</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Prêt à participer à TECHFORUM 2025 ?</h2>
+                <p>Réservez dès maintenant votre place pour ne rien manquer de cet événement exceptionnel.</p>
+                <a href="billetterie.html" class="btn primary large">Réserver mon billet</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/logo.png" alt="TECHFORUM 2025" class="footer-logo">
+                    <p>TECHFORUM 2025 - Le festival technologique incontournable de l'année.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="activites.html">Activités</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="billetterie.html">Billetterie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Guinée, Université Gamal Abdel Nasser</li>
+                        <li><i class="fas fa-envelope"></i> contact@techforum2025.com</li>
+                        <li><i class="fas fa-phone"></i> +224 610 30 50 71</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TECHFORUM. Tous droits réservés.</p>
+                <div class="legal-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions générales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+        function openDrawer() {
+            mobileDrawer.classList.add('open');
+            drawerBackdrop.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            mobileDrawer.classList.remove('open');
+            drawerBackdrop.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openDrawer);
+        drawerCloseBtn.addEventListener('click', closeDrawer);
+        drawerBackdrop.addEventListener('click', closeDrawer);
+
+        // Fermeture avec la touche Escape
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeDrawer();
+        });
+    </script>
+</body>
+</html>

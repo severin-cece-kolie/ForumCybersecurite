@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Technologique - TECHFORUM 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <nav class="navbar-tech">
+        <div class="navbar-content">
+            <!-- LOGO -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="" class="logo-img">
+                <span class="logo-title">TECHFORUM <span class="logo-subtitle">2025</span></span>
+            </a>
+            
+            <!-- MENU BURGER -->
+            <button class="navbar-burger" id="mobileMenuBtn" aria-label="Menu">
+                <svg class="burger-lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/>
+                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+                    <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <!-- MENU PRINCIPAL -->
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <!-- BOUTON RESERVATION -->
+            <a href="billetterie.html" class="navbar-btn">
+                Réserver
+            </a>
+        </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+        <div class="drawer-inner">
+            <ul class="mobile-drawer-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="billetterie.html" class="mobile-drawer-btn">
+                Réserver
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <section class="page-header with-bg" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('assets/forum-bg.jpg');">
+            <div class="container">
+                <h1>Forum Technologique</h1>
+                <p>Échangez, collaborez et partagez vos connaissances avec la communauté</p>
+            </div>
+        </section>
+
+        <section class="forum-categories">
+            <div class="container">
+                <h2>Thèmes de discussion</h2>
+                <p class="section-description">Rejoignez les conversations sur les sujets qui vous passionnent</p>
+                
+                <div class="categories-grid">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cybersécurité</h3>
+                        <p>Discutez des dernières vulnérabilités, techniques de protection et bonnes pratiques.</p>
+                        <span class="topics-count">24 discussions</span>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Intelligence Artificielle</h3>
+                        <p>Échanges sur le machine learning, deep learning et applications de l'IA.</p>
+                        <span class="topics-count">18 discussions</span>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Développement Web</h3>
+                        <p>Frameworks, bonnes pratiques, nouveautés et astuces pour développeurs web.</p>
+                        <span class="topics-count">32 discussions</span>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Réseaux & Infrastructure</h3>
+                        <p>Cloud, architecture réseau, DevOps et administration système.</p>
+                        <span class="topics-count">15 discussions</span>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Éthique Numérique</h3>
+                        <p>Réflexions sur l'impact sociétal et éthique des technologies.</p>
+                        <span class="topics-count">9 discussions</span>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Développement Mobile</h3>
+                        <p>Plateformes mobiles, frameworks cross-platform et UX mobile.</p>
+                        <span class="topics-count">12 discussions</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-discussions">
+            <div class="container">
+                <h2>Discussions populaires</h2>
+                
+                <div class="discussions-list">
+                    <div class="discussion">
+                        <div class="discussion-meta">
+                            <span class="category-badge security">Cybersécurité</span>
+                            <span class="reply-count"><i class="fas fa-comment"></i> 14</span>
+                        </div>
+                        <h3><a href="#">Comment se protéger contre les nouvelles attaques keylogger ou phising ?</a></h3>
+                        <p class="discussion-excerpt">Avec l'augmentation des attaques zero-day, quelles sont les meilleures pratiques pour s'en protéger...</p>
+                        <div class="discussion-footer">
+                            <span class="author"><i class="fas fa-user"></i> Lucien Damey</span>
+                            <span class="date"><i class="far fa-clock"></i> Il y a 2 jours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion">
+                        <div class="discussion-meta">
+                            <span class="category-badge ai">Ethique</span>
+                            <span class="reply-count"><i class="fas fa-comment"></i> 8</span>
+                        </div>
+                        <h3><a href="#">Quels Langage de programmation est beaucoup adaptés pour l'automatisation des tâches en 2025 ?</a></h3>
+                        <p class="discussion-excerpt">Je commence un projet sur l'automatisation des tâches et je me demande quel langage est le plus adapté...</p>
+                        <div class="discussion-footer">
+                            <span class="author"><i class="fas fa-user"></i> Aicha Camara</span>
+                            <span class="date"><i class="far fa-clock"></i> Il y a 3 jours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion">
+                        <div class="discussion-meta">
+                            <span class="category-badge web">Web</span>
+                            <span class="reply-count"><i class="fas fa-comment"></i> 22</span>
+                        </div>
+                        <h3><a href="#">Django vs Laravel - Comparatif 2025</a></h3>
+                        <p class="discussion-excerpt">Avec les dernières mises à jour, quel framework frontend choisir pour un nouveau projet...</p>
+                        <div class="discussion-footer">
+                            <span class="author"><i class="fas fa-user"></i> Alhassane GS Diallo</span>
+                            <span class="date"><i class="far fa-clock"></i> Il y a 5 jours</span>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion">
+                        <div class="discussion-meta">
+                            <span class="category-badge ethics">Éthique</span>
+                            <span class="reply-count"><i class="fas fa-comment"></i> 6</span>
+                        </div>
+                        <h3><a href="#">Comment rendre l'IA plus inclusive dans le système Guinéen ?</a></h3>
+                        <p class="discussion-excerpt">Discussion sur les méthodes pour réduire les biais dans les modèles d'IA et les rendre plus équitables...</p>
+                        <div class="discussion-footer">
+                            <span class="author"><i class="fas fa-user"></i> Boubacar Diallo</span>
+                            <span class="date"><i class="far fa-clock"></i> Il y a 1 semaine</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="#" class="btn primary">Voir toutes les discussions</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="forum-cta">
+            <div class="container">
+                <h2>Prêt à rejoindre la conversation ?</h2>
+                <p>Connectez-vous avec d'autres passionnés de technologie et partagez vos connaissances.</p>
+                <div class="cta-buttons">
+                    <a href="inscription.html" class="btn primary">Créer un compte</a>
+                    <a href="connexion.html" class="btn secondary">Se connecter</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <img src="assets/logo.png" alt="TECHFORUM 2025" class="footer-logo">
+                        <p>TECHFORUM 2025 - Le festival technologique incontournable de l'année.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="activites.html">Activités</a></li>
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="billetterie.html">Billetterie</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Guinée, Université Gamal Abdel Nasser</li>
+                            <li><i class="fas fa-envelope"></i> contact@techforum2025.com</li>
+                            <li><i class="fas fa-phone"></i> +224 610 30 50 71</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TECHFORUM. Tous droits réservés.</p>
+                    <div class="legal-links">
+                        <a href="#">Mentions légales</a>
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions générales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+    </footer>
+
+    <script>
+        // Gestion du menu mobile de la nouvelle navbar
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.add('open');
+            mobileDrawer.classList.add('open');
+        });
+
+        drawerCloseBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+
+        drawerBackdrop.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+    </script>
+</body>
+</html>

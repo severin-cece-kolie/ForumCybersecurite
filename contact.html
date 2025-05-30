@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - TECHFORUM 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <nav class="navbar-tech">
+        <div class="navbar-content">
+            <!-- LOGO -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="" class="logo-img">
+                <span class="logo-title">TECHFORUM <span class="logo-subtitle">2025</span></span>
+            </a>
+            
+            <!-- MENU BURGER -->
+            <button class="navbar-burger" id="mobileMenuBtn" aria-label="Menu">
+                <svg class="burger-lines" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/>
+                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+                    <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <!-- MENU PRINCIPAL -->
+            <ul class="navbar-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <!-- BOUTON RESERVATION -->
+            <a href="billetterie.html" class="navbar-btn">
+                Réserver
+            </a>
+        </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+        <div class="drawer-inner">
+            <ul class="mobile-drawer-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="billetterie.html">Billetterie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="billetterie.html" class="mobile-drawer-btn">
+                Réserver
+            </a>
+        </div>
+    </aside>
+    
+
+    <main>
+        <section class="page-header with-bg" style="background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('assets/conference.jpg');">
+            <div class="container">
+                <h1>Contactez-nous</h1>
+                <p>Nous sommes à votre disposition pour toute question concernant TECHFORUM 2025</p>
+            </div>
+        </section>
+
+        <section class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Adresse</h3>
+                        <p>Guinée, Université Gamal Abdel Nasser<br>Conakry Dixinn <br>Sur la boulevard Donka</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>contact@techforum2025.com<br>billetterie@techforum2025.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Téléphone</h3>
+                        <p>+224 610 30 50 71<br>Lundi au vendredi, 9h-18h</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Dates de l'événement</h3>
+                        <p>15-17 Octobre 2025<br>9h00 - 19h00 chaque jour</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Envoyez-nous un message</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select id="subject" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="billetterie">Billetterie</option>
+                                <option value="activites">Activités</option>
+                                <option value="partenariat">Partenariat</option>
+                                <option value="presse">Presse</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn primary large">Envoyer le message</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.574744667376!2d-13.678979625160379!3d9.545624490537804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd6d3f93e0449%3A0x9e9b96b41bdb1ebc!2sGamal%20Abdel%20Nasser%20University%20Of%20Conakry!5e0!3m2!1sfr!2s!4v1748633636005!5m2!1sfr!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>Notre équipe</h2>
+                <p class="section-description">Les organisateurs de TECHFORUM 2025</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="assets/ndiaye.jpg" alt="Sophie Martin">
+                        </div>
+                        <h3>Mohamed N'DIAYE</h3>
+                        <p class="position">Directrice Générale</p>
+                        <p class="bio">15 ans d'expérience dans l'organisation d'événements technologiques.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="assets/cece.jpg" alt="Thomas Leroy">
+                        </div>
+                        <h3>Sévérin Cécé KOLIE</h3>
+                        <p class="position">Responsable Programme</p>
+                        <p class="bio">Expert en cybersécurité et ancien compétiteur CTF.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="assets/oury.jpg" alt="Amina Kone">
+                        </div>
+                        <h3>Mamadou Oury BALDE</h3>
+                        <p class="position">Responsable Partenariats</p>
+                        <p class="bio">Spécialiste des relations avec les entreprises technologiques.</p>
+                    </div>
+                    
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <img src="assets/logo.png" alt="TECHFORUM 2025" class="footer-logo">
+                        <p>TECHFORUM 2025 - Le festival technologique incontournable de l'année.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="activites.html">Activités</a></li>
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="billetterie.html">Billetterie</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> 15-17 Octobre 2025</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Guinée, Université Gamal Abdel Nasser</li>
+                            <li><i class="fas fa-envelope"></i> contact@techforum2025.com</li>
+                            <li><i class="fas fa-phone"></i> +224 610 30 50 71</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TECHFORUM. Tous droits réservés.</p>
+                    <div class="legal-links">
+                        <a href="#">Mentions légales</a>
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions générales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+    </footer>
+
+    <script>
+        // Gestion du menu mobile de la nouvelle navbar
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.add('open');
+            mobileDrawer.classList.add('open');
+        });
+
+        drawerCloseBtn.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+
+        drawerBackdrop.addEventListener('click', () => {
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.classList.remove('open');
+        });
+    </script>
+</body>
+</html>
