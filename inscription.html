@@ -169,10 +169,66 @@
     </footer>
 
     <script>
-        // Menu mobile
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
-        });
+        // Gestion du menu mobile de la nouvelle navbar
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+        if (mobileMenuBtn && drawerBackdrop && mobileDrawer && drawerCloseBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.add('open');
+                mobileDrawer.classList.add('open');
+            });
+
+            drawerCloseBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
+
+            drawerBackdrop.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
+        }
+
+        // Soumission formulaire d'inscription
+        (function() {
+            const form = document.querySelector('.register-form');
+            if (!form) return;
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const firstName = document.getElementById('register-firstname').value.trim();
+                const lastName = document.getElementById('register-lastname').value.trim();
+                const email = document.getElementById('register-email').value.trim();
+                const password = document.getElementById('register-password').value;
+                const confirm = document.getElementById('register-confirm').value;
+                const terms = document.getElementById('terms').checked;
+
+                if (!terms) {
+                    alert("Veuillez accepter les conditions d'utilisation.");
+                    return;
+                }
+                if (password !== confirm) {
+                    alert('Les mots de passe ne correspondent pas.');
+                    return;
+                }
+                try {
+                    const res = await fetch('/api/auth/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ firstName, lastName, email, password })
+                    });
+                    const data = await res.json();
+                    if (!res.ok) throw new Error(data.error || 'Erreur lors de l\'inscription');
+                    localStorage.setItem('token', data.token);
+                    alert('Inscription réussie !');
+                    window.location.href = 'forum.html';
+                } catch (err) {
+                    alert(err.message);
+                }
+            });
+        })();
     </script>
 </body>
 </html>

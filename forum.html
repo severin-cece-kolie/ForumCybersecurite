@@ -264,20 +264,30 @@
         const mobileDrawer = document.getElementById('mobileDrawer');
         const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            drawerBackdrop.classList.add('open');
-            mobileDrawer.classList.add('open');
-        });
+        if (mobileMenuBtn && drawerBackdrop && mobileDrawer && drawerCloseBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.add('open');
+                mobileDrawer.classList.add('open');
+            });
 
-        drawerCloseBtn.addEventListener('click', () => {
-            drawerBackdrop.classList.remove('open');
-            mobileDrawer.classList.remove('open');
-        });
+            drawerCloseBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
 
-        drawerBackdrop.addEventListener('click', () => {
-            drawerBackdrop.classList.remove('open');
-            mobileDrawer.classList.remove('open');
-        });
+            drawerBackdrop.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
+        }
+
+        // Exemple de chargement de topics (facultatif pour démo)
+        (async function() {
+            try {
+                const res = await fetch('/api/forum/topics');
+                // On pourrait dynamiser la page ici si besoin
+            } catch (e) {}
+        })();
     </script>
 </body>
 </html>
