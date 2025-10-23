@@ -267,20 +267,53 @@
         const mobileDrawer = document.getElementById('mobileDrawer');
         const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            drawerBackdrop.classList.add('open');
-            mobileDrawer.classList.add('open');
-        });
+        if (mobileMenuBtn && drawerBackdrop && mobileDrawer && drawerCloseBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.add('open');
+                mobileDrawer.classList.add('open');
+            });
 
-        drawerCloseBtn.addEventListener('click', () => {
-            drawerBackdrop.classList.remove('open');
-            mobileDrawer.classList.remove('open');
-        });
+            drawerCloseBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
 
-        drawerBackdrop.addEventListener('click', () => {
-            drawerBackdrop.classList.remove('open');
-            mobileDrawer.classList.remove('open');
-        });
+            drawerBackdrop.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
+        }
+
+        // Soumission formulaire de réservation
+        (function() {
+            const form = document.querySelector('.reservation-form');
+            if (!form) return;
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const ticketType = document.getElementById('ticket-type').value;
+                const days = Array.from(document.querySelectorAll('input[name="day"]:checked')).map(i => i.value);
+                const quantity = parseInt(document.getElementById('quantity').value, 10) || 1;
+                const firstName = document.getElementById('first-name').value.trim();
+                const lastName = document.getElementById('last-name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const activities = Array.from(document.getElementById('activities').selectedOptions).map(o => o.value);
+                const comments = document.getElementById('comments').value.trim();
+                try {
+                    const res = await fetch('/api/reservations', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ ticketType, days, quantity, firstName, lastName, email, phone, activities, comments })
+                    });
+                    const data = await res.json();
+                    if (!res.ok) throw new Error(data.error || 'Erreur lors de la réservation');
+                    alert(`Réservation confirmée ! Total: ${data.total} GNF`);
+                    form.reset();
+                } catch (err) {
+                    alert(err.message);
+                }
+            });
+        })();
     </script>
 </body>
 </html>

@@ -246,20 +246,48 @@
         const mobileDrawer = document.getElementById('mobileDrawer');
         const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            drawerBackdrop.classList.add('open');
-            mobileDrawer.classList.add('open');
-        });
+        if (mobileMenuBtn && drawerBackdrop && mobileDrawer && drawerCloseBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.add('open');
+                mobileDrawer.classList.add('open');
+            });
 
-        drawerCloseBtn.addEventListener('click', () => {
-            drawerBackdrop.classList.remove('open');
-            mobileDrawer.classList.remove('open');
-        });
+            drawerCloseBtn.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
 
-        drawerBackdrop.addEventListener('click', () => {
-            drawerBackdrop.classList.remove('open');
-            mobileDrawer.classList.remove('open');
-        });
+            drawerBackdrop.addEventListener('click', () => {
+                drawerBackdrop.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+            });
+        }
+
+        // Soumission du formulaire de contact
+        (function() {
+            const form = document.querySelector('.contact-form');
+            if (!form) return;
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value.trim();
+                try {
+                    const res = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, subject, message })
+                    });
+                    const data = await res.json();
+                    if (!res.ok) throw new Error(data.error || 'Erreur lors de l\'envoi');
+                    alert('Message envoyé, merci !');
+                    form.reset();
+                } catch (err) {
+                    alert(err.message);
+                }
+            });
+        })();
     </script>
 </body>
 </html>
